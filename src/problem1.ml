@@ -6,23 +6,27 @@ type ('a,'b) either =
 
 (** Write OCaml functions that satisfy the following polymorphic type signatures *)
 
-(** f: ('a -> 'b) -> ('b -> 'c) -> 'a -> 'c *)
+(** f: 'a * 'b -> 'a *)
 
 (* let f ... = ... *)
 
-(** g: ('a * 'b -> 'c) -> 'a -> 'b -> 'c *)
+(** g: ('a -> 'b) -> ('b -> 'c) -> 'a -> 'c *)
 
 (* let g ... = ... *)
 
-(** h: ('a -> 'b -> 'c) -> 'a * 'b -> 'c *)
+(** h: ('a * 'b -> 'c) -> 'a -> 'b -> 'c *)
 
 (* let h ... = ... *)
 
-(** i: ('a, 'b) either * ('a -> 'c) * ('b -> 'c) -> 'c *)
+(** i: ('a -> 'b -> 'c) -> 'a * 'b -> 'c *)
 
 (* let i ... = ... *)
 
-(** j: ('a, 'b * 'c) either -> ('a, 'b) either * ('a, 'c) either *)
+(** j: ('a, 'b) either * ('a -> 'c) * ('b -> 'c) -> 'c *)
 
 (* let j ... = ... *)
+
+(** k: ('a, 'b * 'c) either -> ('a, 'b) either * ('a, 'c) either *)
+
+(* let k ... = ... *)
 
